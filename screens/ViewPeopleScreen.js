@@ -15,7 +15,7 @@ import { MyButton } from '../components/MyButton';
 import { ButtonContainer } from '../components/ButtonContainer';
 import NetInfo from '@react-native-community/netinfo';
 import { infoMessage } from '../utils/flashMessage';
-
+import { dangerMessage } from '../utils/flashMessage';
 
 export default function ViewPeopleScreen(props) {
 
@@ -104,7 +104,7 @@ export default function ViewPeopleScreen(props) {
       // Check if not connected to the Internet
       if (!status.isConnected) {
         // Display the flash message
-        infoMessage('No internet connection', 'You will only see cached data until you \nhave an active internet connection again');
+        dangerMessage('No internet connection', 'You will only see cached data until you \nhave an active internet connection again');
       }
     });
   }
