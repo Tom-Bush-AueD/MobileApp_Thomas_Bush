@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Image, Text, View, ScrollView, Pressable } from 'react-native';
 import { SafeAreaView } from "react-native-safe-area-context";
-import {imageIndex} from "../constants/images"
+import {imageIndex} from "../constants/images.js"
 
 // Import helper code
 import Settings from '../constants/Settings';
@@ -12,32 +12,31 @@ import { MyButton } from '../components/MyButton';
 import { TextH1, TextParagraph } from "../components/StyledText";
 
 
+
 export default function HomeScreen(props) {
 
-  const [isLogoColor, setLogoColor] = React.useState(true);
+  const [isLogoColor, setIsLogoColor] = React.useState(true);
 
+  function toggleLogo() {
+    setIsLogoColor(!isLogoColor);
+  }
+  
+  function showViewPeople() {
+    props.navigation.replace('Root', { screen: 'People' });
+  }
+  
   function showHelp() {
-    props.navigation.replace('Root', {screen: 'Help'});
-  }
-
-  function toggleLogo(){
-    setLogoColor(!isLogoColor);
-  }
-
-  function showViewPeople(){
-    props.navigation.replace('Root', {screen: 'People'});
+    props.navigation.replace('Root', { screen: 'Help' });
   }
 
   return (
     <SafeAreaView style={Styles.safeAreaView}>
-  <ScrollView style={Styles.container} contentContainerStyle={Styles.contentContainer}>
-    <View style={Styles.homeLogoContainer}>
-      <Pressable onPress={toggleLogo}>
-        <Image source={imageIndex[isLogoColor ? 'logo' : 'mono']} style={Styles.homeLogo} />
-      </Pressable>
-    </View>
-
-    {/* <MyImage index="logo" /> */}
+      <ScrollView style={Styles.container} contentContainerStyle={Styles.contentContainer}>
+        <View style={Styles.homeLogoContainer}>
+          <Pressable onPress={toggleLogo}>
+            <Image source={imageIndex[isLogoColor ? 'logo' : 'mono']} style={Styles.homeLogo} />
+          </Pressable>
+        </View>    
 
     <View style={Styles.homeHeadingContainer}>
       <Text style={Styles.homeHeading}>ROI HR Management System</Text>
