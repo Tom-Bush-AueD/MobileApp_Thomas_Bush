@@ -37,25 +37,24 @@ function changeFontSize(sizeModifier) {
         <View>
           
           <TextH1 style={{marginTop:0}}>Help topics</TextH1>
-
           <TextH3>Font size</TextH3>
 
-<View style={Styles.helpButtonContainer}>
-  <MyButton
-    text="- Smaller"
-    type="default" // default*|major|minor
-    size="medium" // small|medium*|large
-    onPress={()=>{changeFontSize(-0.1)}}
-    buttonStyle={Styles.helpButton}
-  />
-  <MyButton
-    text="+ Bigger"
-    type="default" // default*|major|minor
-    size="medium" // small|medium*|large
-    onPress={()=>{changeFontSize(+0.1)}}
-    buttonStyle={Styles.helpButton}
-  />
-</View>
+          <View style={Styles.helpButtonContainer}>
+            <MyButton
+              text="- Smaller"
+              type="default" // default*|major|minor
+              size="medium" // small|medium*|large
+              onPress={()=>{changeFontSize(-0.1)}}
+              buttonStyle={Styles.helpButton}
+            />
+            <MyButton
+              text="+ Bigger"
+              type="default" // default*|major|minor
+              size="medium" // small|medium*|large
+              onPress={()=>{changeFontSize(+0.1)}}
+              buttonStyle={Styles.helpButton}
+            />
+          </View>
 
           <TextH2>Sample content</TextH2>
 
